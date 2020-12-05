@@ -41,7 +41,7 @@ const App = () => {
         const confirm = window.confirm(`${newName} is already added to phonebook\nReplace the old number with new one?`)
 
         if(confirm){
-          const changedPerson = {...person, phone: newNumber}
+          const changedPerson = {...person, number: newNumber}
           const id = changedPerson.id
 
           personService.update(id, changedPerson)
@@ -62,7 +62,7 @@ const App = () => {
             })
         }
       } else {
-        const newPerson = { name: newName, phone: newNumber} 
+        const newPerson = { name: newName, number: newNumber} 
 
         personService.create(newPerson)
           .then(createdPerson => {

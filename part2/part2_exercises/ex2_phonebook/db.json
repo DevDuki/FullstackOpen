@@ -2,12 +2,12 @@
   "persons": [
     {
       "name": "ES LÄÄUUUFTTT",
-      "phone": "420",
+      "number": "420",
       "id": 5
     },
     {
       "name": "Yasemin Ergin",
-      "phone": "<3",
+      "number": "<3",
       "id": 6
     }
   ]
