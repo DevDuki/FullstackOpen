@@ -1,21 +1,24 @@
 import axios from 'axios'
-
 const baseurl = '/api/notes'
+
+let token = null
+
+const setToken = (newToken) => {
+  token = `bearer ${newToken}`
+}
 
 const getAll = () => {
   const request = axios.get(baseurl)
-  const nonExisting = {
-    id: 10000,
-    content: 'This note is not saved to the server',
-    date: 'some date',
-    important: true
-  }
-  return request.then(response => response.data.concat(nonExisting))
+  return request.then(response => response.data)
 }
 
-const create = newObject => {
-  const request = axios.post(baseurl, newObject)
-  return request.then(response => response.data)
+const create = async newObject => {
+  const config = {
+    headers: { Authorization: token }
+  }
+
+  const response = await axios.post(baseurl, newObject, config)
+  return response.data
 }
 
 const update = (id, newObject) => {
@@ -24,4 +27,4 @@ const update = (id, newObject) => {
 }
 
 // eslint-disable-next-line
-export default { getAll, create, update }
+export default { getAll, create, update, setToken }
