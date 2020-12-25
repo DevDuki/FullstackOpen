@@ -22,7 +22,7 @@ const NoteForm = ({ createNote }) => {
       <h2>Create a new Note</h2>
 
       <form onSubmit={addNote}>
-        <input 
+        <input
           value={newNote}
           onChange={handleChange}
         />

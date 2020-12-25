@@ -71,18 +71,18 @@ const App = () => {
       .create(noteObject)
       .then(returnedNote => {
         setNotes(notes.concat(returnedNote))
-      })   
+      })
   }
 
   const toggleImportanceOf = (id) => {
     const note = notes.find(note => note.id === id)
-    const changedNote = {...note, important: !note.important}
+    const changedNote = { ...note, important: !note.important }
 
     noteService.update(id, changedNote)
       .then(returnedNote => {
         setNotes(notes.map(note => note.id !== id ? note : returnedNote))
       })
-      .catch(error => {
+      .catch(() => {
         setErrorMessage(
           `Note '${note.content}' was already removed from server`
         )
@@ -117,12 +117,12 @@ const App = () => {
 
       <Notification message={errorMessage} />
 
-      {user === null 
-        ? loginForm() 
-        : <div>
-            <p>{user.name} logged-in</p>
-            {noteForm()}
-          </div>
+      {user === null ?
+        loginForm() :
+        <div>
+          <p>{user.name} logged-in</p>
+          {noteForm()}
+        </div>
       }
 
       <div>
@@ -130,11 +130,11 @@ const App = () => {
       </div>
 
       <ul>
-        {notesToShow.map(note => 
+        {notesToShow.map(note =>
           <Note key={note.id} note={note} toggleImportance={() => toggleImportanceOf(note.id)} />
         )}
       </ul>
-      
+
       <Footer />
 
     </div>
