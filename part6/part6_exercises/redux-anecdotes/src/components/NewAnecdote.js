@@ -13,7 +13,7 @@ const NewAnecdote = () => {
 
     dispatch(createAnecdote(content))
 
-    dispatch(setNotification(`New anecdote '${content}'`, 2))
+    dispatch(setNotification(`New anecdote '${content}'`, 5))
   }
   
   return (

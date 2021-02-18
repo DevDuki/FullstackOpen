@@ -13,16 +13,23 @@ export default (state = '', {type, data}) => {
   }
 }
 
+let notificationTimer = null
+
 export const setNotification = (message, displayTime) => {
   return (dispatch) => {
     dispatch({
       type: 'SET',
       data: message
     })
-    setTimeout(() => {
+
+    if (notificationTimer) {
+      window.clearTimeout(notificationTimer)
+    }
+    
+    notificationTimer = window.setTimeout(() => {
       dispatch({
         type: 'CLEAR'
       })
-    }, displayTime * 1000)  
+    }, displayTime * 1000)
   }
 }
