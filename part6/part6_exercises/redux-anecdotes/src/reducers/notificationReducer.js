@@ -1,13 +1,11 @@
 
+
 export default (state = '', {type, data}) => {
   switch (type) {
-    case 'NEW_ANECDOTE_ADDED':
-      return`Anecdote '${data.anecdote}' has been added!`
+    case 'SET':
+      return data
       
-    case 'VOTED':
-      return `You voted '${data.anecdote}'`
-      
-    case 'REMOVE':
+    case 'CLEAR':
       return ''
 
     default:
@@ -15,26 +13,16 @@ export default (state = '', {type, data}) => {
   }
 }
 
-export const addedNotification = (anecdote) => {
-  return {
-    type: 'NEW_ANECDOTE_ADDED',
-    data: {
-      anecdote
-    }
-  }
-}
-
-export const votedNotification = (anecdote) => {
-  return {
-    type: 'VOTED',
-    data: {
-      anecdote
-    }
-  }
-}
-
-export const removeNotification = () => {
-  return {
-    type: 'REMOVE'
+export const setNotification = (message, displayTime) => {
+  return (dispatch) => {
+    dispatch({
+      type: 'SET',
+      data: message
+    })
+    setTimeout(() => {
+      dispatch({
+        type: 'CLEAR'
+      })
+    }, displayTime * 1000)  
   }
 }

@@ -11,7 +11,7 @@ const Filter = () => {
   }
 
   const style = {
-    marginBottom: 10
+    margin: 10
   }
 
   return (
