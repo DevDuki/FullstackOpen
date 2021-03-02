@@ -1,5 +1,5 @@
 # FullstackOpen
-Fullstackopen is a website (fullstackopen.com) made by a university in Helsinki for students all over the world, who wish to learn about the fullstack web development with React, JavaScript, Node, MongoDB and more
+Fullstackopen is a website (fullstackopen.com) made by a university in Helsinki for students all over the world, who wish to learn about the fullstack web development with React, JavaScript, TypeScript, Node, Express, Cypress, Jest, MongoDB and more
 
 In this Repository I keep pushing my results from the tutorial, as well as from the exercises.
 
