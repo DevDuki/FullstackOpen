@@ -9,5 +9,5 @@ Each part of the course has its own directory, which is then split further into 
 
 - An exercise directory, where you can see my approach at acomplishing each exercise of the course. 
 
-If you are currently doing this course as well, and somehow found this repository, by googling for the solution of an exercise which you were stucked in for a while, 
+If you are currently doing this course as well, and somehow found this repository by googling for the solution of an exercise which you were stucked in for a while, 
 then I hope this repo will be able help u get further :)
